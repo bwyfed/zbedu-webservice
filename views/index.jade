@@ -3,3 +3,22 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  form(method="POST", action="/user/register")
+    div.row
+      label(for="userName") 用户名
+      input#userName(name="user[name]", type="text")
+    div.row
+      label(for="userPassword") 密码
+      input#userPassword(name="user[password]", type="text")
+    div.row
+      input(type="submit" value="注册")
+
+  form(method="POST", action="/user/login")
+    div.row
+      label(for="loginName") 用户名
+      input#loginName(name="user[name]", type="text")
+    div.row
+      label(for="loginPassword") 密码
+      input#loginPassword(name="user[password]", type="text")
+    div.row
+      input(type="submit" value="登录")
